@@ -114,11 +114,18 @@ const getRandomSlots = () => {
 
 const createSlotGroups = () => {
     const numberOfDays = Math.floor(Math.random() * 3) + 1;
+    const dayOffsets = new Set();
 
-    return Array.from({ length: numberOfDays }, (_, index) => ({
-        date: addDays(Math.floor(Math.random() * 5) + 1 + index),
-        timeSlots: getRandomSlots(),
-    }));
+    while (dayOffsets.size < numberOfDays) {
+        dayOffsets.add(Math.floor(Math.random() * 7) + 1);
+    }
+
+    return Array.from(dayOffsets)
+        .sort((left, right) => left - right)
+        .map((offset) => ({
+            date: addDays(offset),
+            timeSlots: getRandomSlots(),
+        }));
 };
 
 const experts = Array.from({ length: 195 }, (_, index) => {
