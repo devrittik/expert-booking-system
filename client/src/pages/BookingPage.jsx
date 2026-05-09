@@ -66,8 +66,7 @@ function BookingPage() {
   return (
     <section className="page booking-layout">
       <div className="detail-card">
-        <p className="card-kicker">Phase 3 - Booking flow</p>
-        <h1>Reserve your session with {expert.name}</h1>
+        <h2>Reserve your session with {expert.name}</h2>
         <p className="detail-copy">
           Your chosen date and time are pre-filled from the expert page so you can finish booking fast.
         </p>

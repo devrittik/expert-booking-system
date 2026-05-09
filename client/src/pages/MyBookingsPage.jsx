@@ -18,7 +18,7 @@ function MyBookingsPage() {
     <section className="page">
       <div className="hero-panel hero-panel-compact">
         <p className="eyebrow">Booking lookup</p>
-        <h1>Find every booking tied to your email address.</h1>
+        <h2>Find every booking tied to your email address.</h2>
       </div>
 
       <form

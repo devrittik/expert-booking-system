@@ -6,9 +6,9 @@ Real-time expert session booking platform built with React, Node.js, Express, Mo
 Live Demo
 ---------
 
--   Live URL: `https://gotoguys.vercel.app`
-
--   Video Demo: `https://your-video-demo-link.com`
+- Live URL: https://gotoguys.vercel.app
+- Video Demo: https://youtu.be/zc5VmY7MSQg
+- Status Monitoring: [UptimeRobot Dashboard](https://stats.uptimerobot.com/Jmey32Cbvf/803028077)
 
 * * * * *
 
@@ -288,13 +288,13 @@ Validation
 |---|---|
 | ![Expert Listing](./screenshots/expert-listing.png) | ![Expert Detail](./screenshots/expert-detail.png) |
 
-| Booking Page | My Bookings |
+| Booking Page | Booking Success |
 |---|---|
-| ![Booking Page](./screenshots/booking-page.png) | ![My Bookings](./screenshots/my-bookings.png) |
+| ![Booking Page](./screenshots/booking-page.png) | ![Booking Success](./screenshots/booking-success.png) |
 
-| Admin View | |
+| My Bookings | Admin View |
 |---|---|
-| ![Admin View](./screenshots/admin-view.png) | |
+| ![My Bookings](./screenshots/my-bookings.png) | ![Admin View](./screenshots/admin-view.png) |
 
 * * * * *
 

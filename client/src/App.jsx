@@ -42,12 +42,12 @@ function App() {
       <Navbar />
       <main className="page-shell">
         <Routes>
-          <Route path="/" element={<Navigate to="/experts" replace />} />
           <Route path="/experts" element={<ExpertListPage />} />
           <Route path="/experts/:id" element={<ExpertDetailPage />} />
           <Route path="/book" element={<BookingPage />} />
           <Route path="/my-bookings" element={<MyBookingsPage />} />
           <Route path="/admin/bookings" element={<AdminBookingsPage />} />
+          <Route path="/" element={<Navigate to="/experts" replace />} />
         </Routes>
       </main>
     </div>

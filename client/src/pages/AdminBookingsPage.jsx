@@ -20,7 +20,7 @@ function AdminBookingsPage() {
     <section className="page">
       <div className="hero-panel hero-panel-compact">
         <p className="eyebrow">Demo Admin Panel</p>
-        <h1>Review bookings and update their current status.</h1>
+        <h2>Review bookings and update their current status.</h2>
       </div>
 
       {isLoading ? <Loader label="Loading all bookings..." /> : null}

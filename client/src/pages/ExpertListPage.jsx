@@ -58,7 +58,7 @@ function ExpertListPage() {
     <section className="page">
       <div className="hero-panel">
         <p className="eyebrow">Expert discovery</p>
-        <h1>Find the right expert for You</h1>
+        <h2>Find the right expert for You</h2>
         <p className="hero-copy">
           Browse by category, search by name, and move straight into a live availability view.
         </p>

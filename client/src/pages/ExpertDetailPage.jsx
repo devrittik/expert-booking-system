@@ -8,6 +8,33 @@ import SlotGrid from "../components/slots/SlotGrid.jsx";
 import { useExpert } from "../hooks/useExperts.js";
 import { useSocket } from "../hooks/useSocket.js";
 
+const normalizeSlotGroups = (slotGroups) => {
+  const groupedSlots = new Map();
+
+  slotGroups.forEach((slotGroup) => {
+    const existingGroup = groupedSlots.get(slotGroup.date);
+
+    if (!existingGroup) {
+      groupedSlots.set(slotGroup.date, {
+        ...slotGroup,
+        timeSlots: [...slotGroup.timeSlots],
+      });
+      return;
+    }
+
+    const seenTimes = new Set(existingGroup.timeSlots.map((slot) => slot.time));
+
+    slotGroup.timeSlots.forEach((slot) => {
+      if (!seenTimes.has(slot.time)) {
+        existingGroup.timeSlots.push(slot);
+        seenTimes.add(slot.time);
+      }
+    });
+  });
+
+  return Array.from(groupedSlots.values());
+};
+
 function ExpertDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -16,13 +43,13 @@ function ExpertDetailPage() {
 
   const expert = data?.data;
   const [localSlots, setLocalSlots] = useState(null);
-  const slots = localSlots || expert?.slots || [];
+  const slots = normalizeSlotGroups(localSlots || expert?.slots || []);
 
   useSocket(id, {
     onSlotBooked: (date, timeSlot) => {
       startTransition(() => {
         setLocalSlots((currentSlots) => {
-          const source = currentSlots || expert?.slots || [];
+          const source = normalizeSlotGroups(currentSlots || expert?.slots || []);
           return source.map((slotGroup) => {
             if (slotGroup.date !== date) {
               return slotGroup;
@@ -45,7 +72,7 @@ function ExpertDetailPage() {
     onSlotReleased: (date, timeSlot) => {
       startTransition(() => {
         setLocalSlots((currentSlots) => {
-          const source = currentSlots || expert?.slots || [];
+          const source = normalizeSlotGroups(currentSlots || expert?.slots || []);
           return source.map((slotGroup) => {
             if (slotGroup.date !== date) {
               return slotGroup;
@@ -81,7 +108,7 @@ function ExpertDetailPage() {
     <section className="page detail-layout">
       <div className="detail-card">
         <p className="card-kicker">{expert.category}</p>
-        <h1>{expert.name}</h1>
+        <h2>{expert.name}</h2>
         <p className="expert-meta">
           {expert.experience} years experience - Rating {expert.rating?.toFixed(1) || "0.0"}
         </p>
