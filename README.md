@@ -6,7 +6,7 @@ Real-time expert session booking platform built with React, Node.js, Express, Mo
 Live Demo
 ---------
 
--   Live URL: `https://your-live-url.com`
+-   Live URL: `https://gotoguys.vercel.app`
 
 -   Video Demo: `https://your-video-demo-link.com`
 
@@ -303,5 +303,5 @@ Validation
 **Rittik Chakraborty**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/rittik-chakraborty)
-[![Portfolio](https://img.shields.io/badge/Portfolio-065234?style=for-the-badge&logo=ghostfolio&logoColor=white)](https://your-portfolio.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-065234?style=for-the-badge&logo=ghostfolio&logoColor=white)](https://rittikchakraborty.vercel.app)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/devrittik/)
